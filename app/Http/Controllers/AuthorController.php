@@ -12,10 +12,10 @@ class AuthorController extends Controller
 {
     public function index()
     {
-        $authors = Author::with('books')->paginate(3);;
-        $books = Book::with('authors')->first();
-        return view('Authors', compact('authors', 'books'));
+        $authors = Author::with('books')->paginate(3);
+        return view('authors', compact('authors'));
     }
+
 
     public function create()
     {
@@ -28,9 +28,7 @@ class AuthorController extends Controller
         $validatedData = $request->validated();
 
         $author = new Author();
-        $author->first_name = $validatedData['first_name'];
-        $author->last_name = $validatedData['last_name'];
-        $author->biography = $validatedData['biography'];
+        $author->fill($validatedData);
         $author->save();
 
         $author->books()->attach($request->input('book_ids', []));

@@ -18,7 +18,7 @@
                                 @endforeach
                             </ul>
                             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                <a href="{{ route('authors.edit',$author->id) }}" class="btn btn-primary me-md-2 mb-2 mb-md-0">Թարմացնել</a>
+                                <a href="{{ route('authors.edit', $author->id) }}" class="btn btn-primary me-md-2 mb-2 mb-md-0">Թարմացնել</a>
                                 <form action="{{ route('authors.destroy', $author->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
@@ -30,6 +30,7 @@
                 </div>
             @endforeach
         </div>
+        <!-- Add pagination links -->
         <div class="d-flex justify-content-center mt-4">
             {{ $authors->links('pagination::bootstrap-4') }}
         </div>

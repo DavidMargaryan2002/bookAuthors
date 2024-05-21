@@ -29,6 +29,7 @@
                 </div>
             @endforeach
         </div>
+        <!-- Add pagination links -->
         <div class="d-flex justify-content-center">
             {{ $books->links('pagination::bootstrap-4') }}
         </div>
