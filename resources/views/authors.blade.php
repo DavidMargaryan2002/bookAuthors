@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('content')
+@section('title', 'Հեղինակներ')
 
+@section('content')
     <div class="order-container bg-light text-dark p-5">
-        <h1 class="title_name text-center mb-4">Հեղինակներ</h1>
         <div class="row row-cols-1 row-cols-md-3 g-4">
             @foreach($authors as $author)
                 <div class="col">
@@ -34,5 +34,4 @@
             {{ $authors->links('pagination::bootstrap-4') }}
         </div>
     </div>
-
 @endsection

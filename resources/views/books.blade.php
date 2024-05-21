@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
+@section('title', 'Գրքեր')
+
 @section('content')
     <div class="order-container bg-light text-dark p-xxl-5">
-        <h1 class="title_name text-center mb-4">Գրքեր</h1>
         <div class="row">
             @foreach($books as $book)
                 <div class="col-md-4 mb-4">
